@@ -1,11 +1,13 @@
-# LunarClient
-Flatpak definition for [LunarClient](https://www.lunarclient.com/)
+# Appimage-to-Flatpak Template
 
-LunarClient is created by [Moonsworth LLC](https://www.moonsworth.com/)
+This is a fork of the [Lunar Client Wrapper](https://github.com/flathub/com.lunarclient.LunarClient)
 
-LunarClient is property of Moonsworth LLC.
+Goal is to provide an easy template for people to use, to convert Appimages to Flatpaks.
 
-Flatpak and FlatHub do not own LunarClient.
+Why? Appimages are not user friendly:
 
-All rights to LunarClient are reserved to Moonsworth LLC.
-
+- They have no Appstream metadata
+- no Desktop entries (meanwhile a setup script could easily provide this)
+- they don't update in a sane way
+- they can be a vector for Viruses, replicating the Windows-Way, which nobody should follow
+- Other than external Android APKs for example. They can't be updated and are not cryptographically verified. So you need to verify the origin every time
