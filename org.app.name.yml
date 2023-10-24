@@ -1,21 +1,20 @@
-app-id: com.lunarclient.LunarClient
-runtime: org.freedesktop.Platform
+app-id: org.app.name
+runtime: org.freedesktop.Platform|org.kde.Platform|org.gnome.Platform
 runtime-version: '23.08'
-sdk: org.freedesktop.Sdk
-base: org.electronjs.Electron2.BaseApp
+sdk: org.freedesktop.Sdk|org.gnome.Sdk|org.kde.Sdk
+base: org.example.app
 base-version: '22.08'
-command: lunarclient
+command: appname
 separate-locales: false
-rename-icon: lunarclient
+rename-icon: appname
 finish-args:
-  - --persist=.minecraft
-  - --persist=.lunarclient
+  - --persist=SOME-STORAGE
+  - --persist=SOME-OTHER-STORAGE
   - --share=network
   - --device=dri
   - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
-  - --persist=.java
   - --talk-name=org.kde.StatusNotifierWatcher
 modules:
   - name: unappimage
@@ -27,45 +26,39 @@ modules:
         url: https://github.com/refi64/unappimage
         commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
 
-  - name: xrandr
-    sources:
-      - sha256: 7b99edb7970a1365eaf5bcaf552144e4dfc3ccf510c4abc08569849929fb366e
-        type: archive
-        url: https://www.x.org/archive/individual/app/xrandr-1.5.1.tar.gz
-
-  - name: lunarclient
+  - name: appname
     buildsystem: simple
     cleanup:
       - squashfs-root
     sources:
       - type: extra-data
-        url: https://launcherupdates.lunarclientcdn.com/Lunar%20Client-3.1.0.AppImage
+        url: https://example.com/Downloads/appname.AppImage
         size: 116730498
         sha256: e8e0063643321ce648e7087dd8eb5a967bd454558d012f4fbe4152d1ee185e19
-        filename: lunar-client.appimage
+        filename: appname.appimage
         x-checker-data:
           type: electron-updater
 
       - type: script
-        dest-filename: lunarclient
+        dest-filename: appname
         commands:
           - exec zypak-wrapper /app/extra/bin/launcher --no-sandbox "$0"
 
       - type: file
-        path: com.lunarclient.LunarClient.appdata.xml
+        path: org.app.name.appdata.xml
 
       - type: file
-        path: com.lunarclient.LunarClient.desktop
+        path: org.app.name.desktop
 
       - type: file
         path: apply_extra.sh
 
       - type: file
-        path: icons/lunarclient.png
+        path: icons/appname.png
 
     build-commands:
       - install -D ./apply_extra.sh "${FLATPAK_DEST}/bin/apply_extra"
       - install lunarclient "${FLATPAK_DEST}/bin/"
-      - install -Dm644 com.lunarclient.LunarClient.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
-      - install -Dm644 com.lunarclient.LunarClient.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
-      - install  -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps lunarclient.png
+      - install -Dm644 org.app.name.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -Dm644 org.app.name.appdata.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml"
+      - install  -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps appname.png
