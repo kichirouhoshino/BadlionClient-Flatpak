@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=App Name
-Comment=App Description
-Exec=appname
-Terminal=false
-Type=Application
-Icon=org.app.name
-StartupWMClass=appname
-Categories=Game;

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_IMAGE="/app/extra/lunar-client.appimage"
+APP_IMAGE="/app/extra/BadlionClient.appimage"
 
 # Allow image to execute
 
@@ -28,7 +28,7 @@ iconSizes=("16" "32" "48" "64" "128" "256")
 for I in "${iconSizes[@]}"
 do
 	dir="$ICON_DIR/${I}x${I}/apps/"
-	mv "$dir/launcher.png" "$dir/com.lunarclient.LunarClient.png"
+	mv "$dir/BadlionClient.png" "$dir/com.badlion.BadlionClient.png"
 done
 
 # Clean up

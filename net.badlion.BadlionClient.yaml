@@ -1,0 +1,65 @@
+app-id: net.badlion.BadlionClient
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: BadlionClient
+separate-locales: false
+rename-icon: BadlionClient
+finish-args:
+  - --env=APPDIR=/app/extra/bin
+  - --persist=.cache/Badlion Client
+  - --persist=.minecraft
+  - --persist=.java
+  - --share=network
+  - --device=dri
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --share=ipc
+  - --socket=session-bus
+
+modules:
+  - name: unappimage
+    buildsystem: simple
+    build-commands:
+      - make -C squashfs-tools install INSTALL_DIR=/app/bin
+    sources:
+      - type: git
+        url: https://github.com/refi64/unappimage
+        commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
+
+  - name: xrandr
+    sources:
+      - sha256: 7b99edb7970a1365eaf5bcaf552144e4dfc3ccf510c4abc08569849929fb366e
+        type: archive
+        url: https://www.x.org/archive/individual/app/xrandr-1.5.1.tar.gz
+
+  - name: BadlionClient
+    buildsystem: simple
+    cleanup:
+      - squashfs-root
+    sources:
+      - type: extra-data
+        url: https://client-updates-cdn77.badlion.net/BadlionClient
+        sha256: f5e94d2d2a823b6d66d53d83f960012a8b43f457d6dc5adc3b16e73ddc9577ec
+        size: 161107293
+        filename: BadlionClient.appimage
+        x-checker-data:
+          type: electron-updater
+      - type: script
+        dest-filename: BadlionClient
+        commands:
+          - exec /app/extra/bin/AppRun --no-sandbox "$0"
+      - type: file
+        path: apply_extra.sh
+      - type: file
+        path: net.badlion.BadlionClient.desktop
+      - type: file
+        path: icons/BadlionClient.png
+    build-commands:
+      - install -D ./apply_extra.sh "${FLATPAK_DEST}/bin/apply_extra"
+      - install BadlionClient "${FLATPAK_DEST}/bin/"
+      - install -Dm644 net.badlion.BadlionClient.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps BadlionClient.png
