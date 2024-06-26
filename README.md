@@ -6,4 +6,7 @@ https://github.com/flathub/com.lunarclient.LunarClient
 
 ToDo:
 - Add Flathub Stuff (tho idk if I can put it in flathub.)
-- Maybe use an Electron BaseApp instead of the included one? (This requires editing the AppRun script at build time to accommodate this)
+- Fix microsoft login not persisting after exit
+
+What I can't do:
+- zypak-wrapper (launching minecraft crashes the whole launcher. There's probably a way to do this but I definitely cant.)
