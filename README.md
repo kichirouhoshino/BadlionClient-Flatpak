@@ -6,4 +6,4 @@ https://github.com/flathub/com.lunarclient.LunarClient
 
 ToDo:
 - Add Flathub Stuff (tho idk if I can put it in flathub.)
-- Run the app from the AppRun script instead of directly launching the chromium binary (It contains the app's EULA agreement dialog but has issues launching the binary itself)
+- Maybe use an Electron BaseApp instead of the included one? (This requires editing the AppRun script at build time to accommodate this)
