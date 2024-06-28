@@ -6,10 +6,12 @@ command: BadlionClient
 separate-locales: false
 rename-icon: BadlionClient
 finish-args:
-  - --env=APPDIR=/app/extra/bin
-  - --persist=.cache/Badlion Client
-  - --persist=.minecraft
-  - --persist=.java
+  - --env=APPDIR=/app/extra/bin # for the AppRun script to work properly
+  - --persist=.cache/Badlion Client # Where it stores the java runtime binaries
+  - --persist=.minecraft # Minecraft itself
+  - --persist=.java # Might be necessary
+  - --persist=.ld.so # Might also be necessary
+  - --persist=.pki # Where login info is kept
   - --share=network
   - --device=dri
   - --socket=x11
@@ -19,6 +21,7 @@ finish-args:
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
   - --socket=session-bus
+  - --talk-name=org.freedesktop.secrets
 
 modules:
   - name: unappimage
@@ -46,8 +49,6 @@ modules:
         sha256: f5e94d2d2a823b6d66d53d83f960012a8b43f457d6dc5adc3b16e73ddc9577ec
         size: 161107293
         filename: BadlionClient.appimage
-        x-checker-data:
-          type: electron-updater
       - type: script
         dest-filename: BadlionClient
         commands:
