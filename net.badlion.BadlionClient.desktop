@@ -4,6 +4,6 @@ Comment=The Best All-in-One Minecraft Mod Library
 Exec=BadlionClient
 Terminal=false
 Type=Application
-Icon=BadlionClient
+Icon=net.badlion.BadlionClient
 StartupWMClass=BadlionClient
 Categories=Game;

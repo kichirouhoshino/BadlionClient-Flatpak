@@ -4,23 +4,20 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: BadlionClient
 separate-locales: false
-rename-icon: BadlionClient
 finish-args:
-  - --env=APPDIR=/app/extra/bin # for the AppRun script to work properly
-  - --persist=.cache/Badlion Client # Where it stores the java runtime binaries
-  - --persist=.minecraft # Minecraft itself
-  - --persist=.java # Might be necessary
-  - --persist=.ld.so # Might also be necessary
-  - --persist=.pki # Where login info is kept
+  - --env=APPDIR=/app/extra/bin
+  - --persist=.cache/Badlion Client
+  - --persist=.minecraft
+  - --persist=.ld.so
+  - --persist=.pki
   - --share=network
   - --device=dri
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
   - --socket=pulseaudio
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
-  - --socket=session-bus
   - --talk-name=org.freedesktop.secrets
 
 modules:
@@ -58,9 +55,39 @@ modules:
       - type: file
         path: net.badlion.BadlionClient.desktop
       - type: file
-        path: icons/BadlionClient.png
+        path: icons/icon_16.png
+      - type: file
+        path: icons/icon_20.png
+      - type: file
+        path: icons/icon_24.png
+      - type: file
+        path: icons/icon_32.png
+      - type: file
+        path: icons/icon_40.png
+      - type: file
+        path: icons/icon_48.png
+      - type: file
+        path: icons/icon_64.png
+      - type: file
+        path: icons/icon_96.png
+      - type: file
+        path: icons/icon_128.png
+      - type: file
+        path: icons/icon_256.png
+      - type: file
+        path: icons/icon_512.png
     build-commands:
       - install -D ./apply_extra.sh "${FLATPAK_DEST}/bin/apply_extra"
       - install BadlionClient "${FLATPAK_DEST}/bin/"
       - install -Dm644 net.badlion.BadlionClient.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
-      - install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps BadlionClient.png
+      - install -Dm644 icon_16.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_20.png /app/share/icons/hicolor/20x20/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_24.png /app/share/icons/hicolor/24x24/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_32.png /app/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_40.png /app/share/icons/hicolor/40x40/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_48.png /app/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_96.png /app/share/icons/hicolor/96x96/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_256.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+      - install -Dm644 icon_512.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
