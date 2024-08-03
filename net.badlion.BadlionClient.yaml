@@ -42,9 +42,9 @@ modules:
       - squashfs-root
     sources:
       - type: extra-data
-        url: https://client-updates-cdn77.badlion.net/BadlionClient
-        sha256: f5e94d2d2a823b6d66d53d83f960012a8b43f457d6dc5adc3b16e73ddc9577ec
-        size: 161107293
+        url: https://client-updates.badlion.net/BadlionClient
+        sha256: c91fcaa3c9a85160d5c99f6d2a3ed917c298a5c0ed6f032f7a5fd40563607a15
+        size: 161164437
         filename: BadlionClient.appimage
       - type: script
         dest-filename: BadlionClient
