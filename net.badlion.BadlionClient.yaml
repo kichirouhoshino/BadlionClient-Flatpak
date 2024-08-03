@@ -5,6 +5,7 @@ sdk: org.freedesktop.Sdk
 command: BadlionClient
 separate-locales: false
 finish-args:
+  - --env=APPIMAGE=1
   - --env=APPDIR=/app/extra/bin
   - --persist=.cache/Badlion Client
   - --persist=.minecraft
