@@ -7,6 +7,7 @@ separate-locales: false
 finish-args:
   - --env=APPIMAGE=1
   - --env=APPDIR=/app/extra/bin
+  - --persist=.config/Badlion Client
   - --persist=.cache/Badlion Client
   - --persist=.minecraft
   - --persist=.ld.so
@@ -17,7 +18,6 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
   - --talk-name=org.freedesktop.secrets
 
