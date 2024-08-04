@@ -10,7 +10,6 @@ finish-args:
   - --persist=.config/Badlion Client
   - --persist=.cache/Badlion Client
   - --persist=.minecraft
-  - --persist=.ld.so
   - --persist=.pki
   - --share=network
   - --device=dri
