@@ -2,9 +2,12 @@ app-id: net.badlion.BadlionClient
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '23.08'
 command: BadlionClient
 separate-locales: false
 finish-args:
+  - --env=ZYPAK_DISABLE_SANDBOX=1
   - --env=APPIMAGE=1
   - --env=APPDIR=/app/extra/bin
   - --persist=.config/Badlion Client
@@ -43,10 +46,14 @@ modules:
         sha256: c91fcaa3c9a85160d5c99f6d2a3ed917c298a5c0ed6f032f7a5fd40563607a15
         size: 161164437
         filename: BadlionClient.appimage
+        x-checker-data:
+          type: electron-updater
+
       - type: script
         dest-filename: BadlionClient
         commands:
-          - exec /app/extra/bin/AppRun --no-sandbox "$0"
+          - exec zypak-wrapper /app/extra/bin/BadlionClient --no-sandbox "$0"
+
       - type: file
         path: apply_extra.sh
       - type: file
