@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Badlion Client
 Comment=The Best All-in-One Minecraft Mod Library
-Exec=BadlionClient
+Exec=badlionclient
 Terminal=false
 Type=Application
 Icon=net.badlion.BadlionClient
