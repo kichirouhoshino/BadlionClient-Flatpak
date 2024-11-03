@@ -1,9 +1,8 @@
 #!/bin/bash
-APP_IMAGE="/app/extra/BadlionClient.appimage"
-chmod +x $APP_IMAGE
-unappimage $APP_IMAGE
-DEST="/app/badlionclient"
-mkdir $DEST
-cp -r squashfs-root/* $DEST
+mv ./BadlionClient ./BadlionClient.appimage
+chmod +x ./BadlionClient.appimage
+unappimage ./BadlionClient.appimage
+mkdir /app/badlionclient
+cp -r squashfs-root/* /app/badlionclient
 rm -rf squashfs-root/
-rm $APP_IMAGE
+rm ./BadlionClient.appimage

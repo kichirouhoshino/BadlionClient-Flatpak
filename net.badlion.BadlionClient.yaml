@@ -37,11 +37,9 @@ modules:
     cleanup:
       - squashfs-root
     sources:
-      - type: extra-data
+      - type: file
         url: https://client-updates.badlion.net/BadlionClient
         sha256: 4f06a6d3f93e96239e72984e5d0b67d993338b7741dfb5651fe1201459f871da
-        size: 207327340
-        filename: BadlionClient.appimage
       - type: file
         path: apply_extra.sh
       - type: file
@@ -71,7 +69,7 @@ modules:
       - type: file
         path: badlionclient.sh
     build-commands:
-      - install -D ./apply_extra.sh "${FLATPAK_DEST}/bin/apply_extra"
+      - sh ./apply_extra.sh
       - install -Dm644 net.badlion.BadlionClient.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
       - install -Dm644 icon_16.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png
       - install -Dm644 icon_20.png /app/share/icons/hicolor/20x20/apps/${FLATPAK_ID}.png

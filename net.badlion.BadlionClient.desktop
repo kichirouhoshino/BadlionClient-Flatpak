@@ -5,5 +5,5 @@ Exec=badlionclient
 Terminal=false
 Type=Application
 Icon=net.badlion.BadlionClient
-StartupWMClass=BadlionClient
+StartupWMClass=badlionclient
 Categories=Game;
