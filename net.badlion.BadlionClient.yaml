@@ -70,6 +70,7 @@ modules:
       - mv ./BadlionClient ./BadlionClient.appimage
       - chmod +x ./BadlionClient.appimage
       - ./BadlionClient.appimage --appimage-extract
+      - mkdir /app/badlionclient
       - cp -r squashfs-root/* /app/badlionclient
       - rm -rf squashfs-root/
       - rm ./BadlionClient.appimage
