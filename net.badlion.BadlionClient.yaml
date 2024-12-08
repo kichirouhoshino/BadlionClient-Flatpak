@@ -30,7 +30,7 @@ modules:
     sources:
       - type: file
         url: https://client-updates.badlion.net/BadlionClient
-        sha256: 4f06a6d3f93e96239e72984e5d0b67d993338b7741dfb5651fe1201459f871da
+        sha256: c01481c25b966b93d73ab5ef23b3dc7138531213fe2008fe9413f9e5d9126e57
       - type: file
         path: net.badlion.BadlionClient.desktop
       - type: file
