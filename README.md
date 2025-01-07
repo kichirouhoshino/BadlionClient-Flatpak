@@ -1,8 +1,10 @@
 # BadlionClient-Flatpak
-A Flatpak definition of Badlion Client, a Minecraft launcher
+A Flatpak package for BadlionCLient
 
-Based on the Lunar Client Flatpak manifest, since both launchers are packaged as an AppImage
-https://github.com/flathub/com.lunarclient.LunarClient
+## Building
 
-What I can't do:
-- zypak-wrapper (launching minecraft crashes the whole launcher. This is probably because Badlion ships with an ancient version of electron. Not entirely sure though.)
+```bash
+flatpak-builder --install-deps-from=flathub --force-clean build-dir net.badlion.BadlionClient.yaml
+```
+
+You can also find the artifacts in the Actions tab. Not sure if I'm allowed to distribute those. I might remove the github actions in the future.
