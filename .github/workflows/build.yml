@@ -9,7 +9,7 @@ jobs:
     name: "Build Flatpak release"
     runs-on: ubuntu-latest
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-47
+      image: bilelmoussaoui/flatpak-github-actions:freedesktop-24.08
       options: --privileged
     steps:
       - name: Checkout code
