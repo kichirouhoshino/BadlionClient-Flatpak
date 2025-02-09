@@ -6,19 +6,15 @@ on:
   pull_request:
 jobs:
   flatpak:
-    name: "Build Flatpak release"
+    name: "Flatpak"
     runs-on: ubuntu-latest
     container:
-      image: bilelmoussaoui/flatpak-github-actions:freedesktop-24.08
+      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-24.08
       options: --privileged
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - name: Build Flatpak
-        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
-        with:
+    - uses: actions/checkout@v4
+    - uses: flathub-infra/flatpak-github-actions/flatpak-builder@master
+      with:
           bundle: BadlionClient.flatpak
           manifest-path: net.badlion.BadlionClient.yaml
           cache-key: flatpak-builder-${{ github.sha }}
