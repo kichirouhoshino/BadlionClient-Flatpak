@@ -2,11 +2,6 @@
 ## BadlionClient freezes on "Checking for Client Update" if this is not set
 export APPIMAGE=1
 
-## Without zypak
-# export APPDIR=/app/bin/badlionclient
-# cd /app/bin/badlionclient
-# ./AppRun --no-sandbox --ozone-platform-hint=auto "$0"
-
 export TMPDIR="$XDG_RUNTIME_DIR/app/${FLATPAK_ID:-net.badlion.BadlionClient}"
 
 declare -a FLAGS=(--enable-speech-dispatcher)
@@ -27,4 +22,4 @@ if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
     fi
 fi
 
-zypak-wrapper /app/bin/badlionclient/BadlionClient.bin "${FLAGS[@]}" "$@"
+zypak-wrapper /app/extra/BadlionClient.bin "${FLAGS[@]}" "$@"

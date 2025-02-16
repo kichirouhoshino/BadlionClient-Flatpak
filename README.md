@@ -1,10 +1,12 @@
 # BadlionClient-Flatpak
-A Flatpak package for BadlionCLient
+A Flatpak package for BadlionClient
 
-## Building
+## Building and Installing
 
 ```bash
-flatpak-builder --install-deps-from=flathub --force-clean build-dir net.badlion.BadlionClient.yaml
+flatpak-builder --install --install-deps-from=flathub --user --force-clean build-dir net.badlion.BadlionClient.yaml
 ```
 
-You can also find the artifacts in the Actions tab. Not sure if I'm allowed to distribute those. I might remove the github actions in the future.
+You can also find the Flatpak bundles in the actions tab. This makes use of extra-data to prevent redistribution.
+
+Badlion Client is owned by © 2013-2025 ESL Gaming Online, Inc.

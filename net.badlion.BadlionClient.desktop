@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Badlion Client
+Exec=runbadlionclient
+Terminal=false
+Type=Application
+Icon=net.badlion.BadlionClient
+StartupWMClass=net.badlion.BadlionClient
+Comment=Badlion Client
+Categories=Game;
