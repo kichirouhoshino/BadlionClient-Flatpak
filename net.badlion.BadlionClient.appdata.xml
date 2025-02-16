@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>net.badlion.BadlionClient</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+    <name>Badlion Client</name>
+    <developer id="net.badlion">
+        <name>ESL Gaming, Inc.</name>
+    </developer>
+    <summary>The Most Complete All-In-One Mod Library for Minecraft</summary>
+    <description>
+        <p>The Ultimate Client for the Best Minecraft Gameplay</p>
+        <ul>
+            <li>Highest FPS Boost - Experience smoother gameplay with our exclusive FPS technology developed over 1,000 hours. You won't have to compromise on quality or endure long load times.</li>
+            <li>Largest Mod Selection - Customize your Minecraft adventure the way you like it! Choose from over 100 mods to enhance your game depending on your play style and game modes. Whatever you need, we have it!</li>
+            <li>Supports All Popular Versions - Play on all the most popular versions. We also provide support for new Minecraft versions before any other client does!</li>
+        </ul>
+    </description>
+    <categories>
+        <category>Game</category>
+    </categories>
+    <recommends>
+        <control>keyboard</control>
+        <control>pointing</control>
+    </recommends>
+    <url type="homepage">https://www.badlion.net/minecraft-client</url>
+    <url type="help">https://support.badlion.net/</url>
+    <url type="faq">https://www.badlion.net/faq</url>
+    <launchable type="desktop-id">net.badlion.BadlionClient.desktop</launchable>
+    <releases>
+        <release version="4.5.2" date="2024-04-11">
+            <description></description>
+        </release>
+    </releases>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">moderate</content_attribute>
+        <content_attribute id="violence-fantasy">moderate</content_attribute>
+        <content_attribute id="social-chat">intense</content_attribute>
+        <content_attribute id="social-info">intense</content_attribute>
+        <content_attribute id="money-purchasing">intense</content_attribute>
+        <content_attribute id="money-advertising">moderate</content_attribute>
+    </content_rating>
+</component>
