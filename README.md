@@ -7,6 +7,11 @@ A Flatpak package for BadlionClient
 flatpak-builder --install --install-deps-from=flathub --user --force-clean build-dir net.badlion.BadlionClient.yaml
 ```
 
-You can also find the Flatpak bundles in the actions tab. This makes use of extra-data to prevent redistribution.
+You can install it from my personal flatpak repo (remove the --user argument to install system-wide)
+``` bash
+flatpak remote-add --user roddy-flatpak https://kichirouhoshino.github.io/roddy-flatpaks/index.flatpakrepo
+flatpak install roddy-flatpak net.badlion.BadlionClient
+```
+This makes use of extra-data to prevent redistribution.
 
 Badlion Client is owned by © 2013-2025 ESL Gaming Online, Inc.
